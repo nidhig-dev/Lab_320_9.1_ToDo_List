@@ -1,16 +1,24 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Lab uses `useReducer` hook to create a Todo list and manage its states. 
 
-Currently, two official plugins are available:
+## Installation
+- `npm create vite@latest .`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
+- The todo list application must have:
 
-## React Compiler
+    - ✅A heading labeling it as a "todo list."
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+    - ✅A list of "todo" items, which are strings listing activities to be accomplished (e.g. "find that missing sock"). Each "todo" item should have:
 
-## Expanding the ESLint configuration
+        - ✅A checkbox next to it which indicates whether it is "complete."
+        - ✅A "delete" button next to it which removes it from the list.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    - ✅The "delete" button should be disabled unless the todo is complete!
+    - ✅An "edit" button that replaces the todo string with a text input used to edit the todo.
+
+        - ✅When this text input is active, the "delete" and "edit" buttons should be hidden, and a "save" button should appear. 
+        - ✅The "save" button should save any changes made to the todo within the text input.
+    - ✅An input element that creates new todo items and adds them to the list.
+    - ✅New todos should be added to the top of the list visually; the oldest todos should be at the bottom.

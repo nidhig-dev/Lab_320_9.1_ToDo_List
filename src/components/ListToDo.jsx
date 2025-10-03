@@ -17,14 +17,17 @@ export default function ListToDo() {
 
 
     function handleAdd() {
+        //If empty string is added to todo
+        if (!addItem.trim()) return;
         dispatch({ type: "Add", payload: { name: addItem } });
         setAddItem("");
         addtodo.current.focus();
     }
-    function handleEdit(id,title) {
+    function handleEdit(id,title) {        
         setIsSave(true)
         setEditId(id);
         setEditValue(title);
+       
     }
     function handleSave(id) {
         dispatch({ type: "Save", payload: { id, value: editValue } });
@@ -50,7 +53,8 @@ export default function ListToDo() {
             </form>
             <ul>
                 {
-                    state.map((eachTodo) => (
+                    //display the last added to do first
+                    [...state].reverse().map((eachTodo) => (
                         // if save is not clicked and this todo is not being edited
                         (!(isSave && editId === eachTodo.id)) ?
                             <li className="listTodo" key={eachTodo.id}>
